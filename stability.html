@@ -10,7 +10,10 @@
 
 <nav>
   <h1>QSSI Spiral</h1>
-  <div>
+  <button class="menu-toggle" aria-label="Toggle Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="security.html">Security</a>
     <a href="stability.html">Stability</a>
@@ -20,18 +23,27 @@
 </nav>
 
 <div class="section">
-  <h1>Stability Spiral</h1>
-  <h2>Maintaining Balance</h2>
-  <p>The Stability Spiral ensures operations remain consistent even under external pressure. 
-  By cycling through controlled zones, stability is reinforced rather than disrupted.</p>
+  <h1>Stability</h1>
+  <p>Stability ensures the spiral doesn’t collapse inward. Like balancing resources in COD Zombies, 
+  QSSI stability requires constant adjustment of defenses and reserves.</p>
 
+  <h2>Pillars of Stability</h2>
   <ul class="checklist">
-    <li>Maintain operational rhythm</li>
-    <li>Reduce chaos through structure</li>
-    <li>Adapt movement to pressure</li>
-    <li>Strengthen with repetition</li>
+    <li>Resource Balance</li>
+    <li>Adaptability to Threats</li>
+    <li>Resilient Infrastructure</li>
+    <li>Clear Escape Mechanisms</li>
   </ul>
 </div>
+
+<script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  toggleBtn.addEventListener('click', () => {
+    toggleBtn.classList.toggle('open');
+    navLinks.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
