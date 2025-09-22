@@ -10,7 +10,10 @@
 
 <nav>
   <h1>QSSI Spiral</h1>
-  <div>
+  <button class="menu-toggle" aria-label="Toggle Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
     <a href="index.html">Home</a>
     <a href="security.html">Security</a>
     <a href="stability.html">Stability</a>
@@ -20,18 +23,27 @@
 </nav>
 
 <div class="section">
-  <h1>Infrastructure Spiral</h1>
-  <h2>Building Strong Foundations</h2>
-  <p>Infrastructure must be reinforced with spiral logic—designed for flexibility, 
-  resilience, and growth without collapse when stressed.</p>
+  <h1>Infrastructure</h1>
+  <p>The infrastructure of the spiral is what makes it sustainable. In COD Zombies terms, 
+  think of it as the map design itself: walls, doors, choke points, and traps.</p>
 
+  <h2>Key Infrastructure Elements</h2>
   <ul class="checklist">
-    <li>Layered structural defenses</li>
-    <li>Flexibility built into systems</li>
-    <li>Resilient design for scalability</li>
-    <li>Controlled redundancy</li>
+    <li>Strong Perimeters</li>
+    <li>Safe Pathways</li>
+    <li>Critical Control Points</li>
+    <li>Integrated Technology</li>
   </ul>
 </div>
+
+<script>
+  const toggleBtn = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  toggleBtn.addEventListener('click', () => {
+    toggleBtn.classList.toggle('open');
+    navLinks.classList.toggle('show');
+  });
+</script>
 
 </body>
 </html>
