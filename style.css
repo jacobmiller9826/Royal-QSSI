@@ -33,21 +33,83 @@ nav h1 {
   letter-spacing: 2px;
 }
 
-nav div {
+/* Nav links */
+.nav-links {
   display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  gap: 2rem;
 }
 
-nav a {
+.nav-links a {
   color: #fff;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
 
-nav a:hover {
+.nav-links a:hover {
   color: #ff0000;
+}
+
+/* Hamburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Animate to X */
+.menu-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #111;
+    margin-top: 1rem;
+    border-radius: 6px;
+    padding: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.5rem 0;
+    text-align: center;
+    width: 100%;
+  }
 }
 
 /* Section layout */
@@ -73,7 +135,6 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
-  color: #fff;
   border-left: 4px solid #ff0000;
   padding-left: 0.8rem;
   margin-bottom: 1.2rem;
@@ -100,7 +161,7 @@ ul li {
   font-size: 1rem;
 }
 
-/* Checklist style */
+/* Checklist */
 .checklist li {
   list-style: none;
   position: relative;
@@ -110,7 +171,6 @@ ul li {
 .checklist li::before {
   content: "✔";
   color: #ff0000;
-  font-size: 1rem;
   position: absolute;
   left: 0;
   top: 0;
@@ -144,77 +204,4 @@ ul li {
   border-radius: 12px;
   border: 1px solid #222;
   box-shadow: 0 0 25px rgba(255,0,0,0.15);
-}
-
-/* ---------------- Responsive Design ---------------- */
-
-/* Tablet */
-@media (max-width: 992px) {
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1rem;
-  }
-
-  nav div {
-    margin-top: 0.8rem;
-    flex-wrap: wrap;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  .section {
-    margin: 7rem 1rem 2rem 1rem;
-    padding: 1.5rem;
-  }
-}
-
-/* Mobile */
-@media (max-width: 600px) {
-  nav {
-    align-items: center;
-  }
-
-  nav h1 {
-    font-size: 1.2rem;
-  }
-
-  nav div {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
-    width: 100%;
-  }
-
-  nav a {
-    font-size: 0.95rem;
-  }
-
-  h1 {
-    font-size: 1.6rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  p, ul li {
-    font-size: 0.95rem;
-  }
-
-  .button {
-    width: 100%;
-    text-align: center;
-    padding: 1rem;
-  }
-
-  .spiral-diagram {
-    height: 300px;
-  }
 }
