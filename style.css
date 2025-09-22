@@ -16,7 +16,7 @@ body {
 nav {
   width: 100%;
   padding: 1rem 2rem;
-  background: rgba(0,0,0,0.85);
+  background: rgba(0,0,0,0.9);
   border-bottom: 1px solid #222;
   position: fixed;
   top: 0;
@@ -33,10 +33,15 @@ nav h1 {
   letter-spacing: 2px;
 }
 
+nav div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
 nav a {
   color: #fff;
   text-decoration: none;
-  margin-left: 2rem;
   font-size: 1rem;
   transition: color 0.3s ease;
 }
@@ -132,11 +137,84 @@ ul li {
 /* Spiral diagram */
 .spiral-diagram {
   width: 100%;
-  height: 600px;
+  height: 400px;
   display: block;
-  margin: 3rem auto;
+  margin: 2rem auto;
   background: #0a0a0a;
   border-radius: 12px;
   border: 1px solid #222;
   box-shadow: 0 0 25px rgba(255,0,0,0.15);
+}
+
+/* ---------------- Responsive Design ---------------- */
+
+/* Tablet */
+@media (max-width: 992px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  nav div {
+    margin-top: 0.8rem;
+    flex-wrap: wrap;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    margin: 7rem 1rem 2rem 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  nav {
+    align-items: center;
+  }
+
+  nav h1 {
+    font-size: 1.2rem;
+  }
+
+  nav div {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+  }
+
+  nav a {
+    font-size: 0.95rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  p, ul li {
+    font-size: 0.95rem;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .spiral-diagram {
+    height: 300px;
+  }
 }
